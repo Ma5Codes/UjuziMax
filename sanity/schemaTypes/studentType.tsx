@@ -17,11 +17,6 @@ export const studentType = defineType({
       type: "string",
     }),
     defineField({
-      name: "image",
-      title: "Image",
-      type: "image",
-    }),
-    defineField({
       name: "email",
       title: "Email",
       type: "string",
@@ -36,8 +31,7 @@ export const studentType = defineType({
     defineField({
       name: "imageUrl",
       title: "Profile Image URL",
-      type: "string",
-      validation: (rule) => rule.required(),
+      type: "url",
     }),
   ],
   preview: {
@@ -49,7 +43,14 @@ export const studentType = defineType({
     prepare({ firstName, lastName, imageUrl }) {
       return {
         title: `${firstName.charAt(0).toUpperCase()}${firstName.slice(1)} ${lastName.charAt(0).toUpperCase()}${lastName.slice(1)}`,
-        media: <Image src={imageUrl} alt={`${firstName} ${lastName}`} width={100} height={100} />,
+        media: (
+          <Image
+            src={imageUrl}
+            alt={`${firstName} ${lastName}`}
+            width={100}
+            height={100}
+          />
+        ),
       };
     },
   },

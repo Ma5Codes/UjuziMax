@@ -1,8 +1,8 @@
-import { defineType} from 'sanity'
+import { defineType } from "sanity";
 
 export const blockContent = defineType({
-    name: 'blockContent',
-    title: 'Block Content',
-    type: 'array',
-    of: [{type: 'block'}],
+  name: "blockContent",
+  title: "Content",
+  type: "array",
+  of: [{ type: "block" }],
 });
