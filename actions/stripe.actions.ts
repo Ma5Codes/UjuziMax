@@ -1,6 +1,6 @@
 "use server";
 import {config} from '@/lib/config'
-import stripe from "@/lib/utils";
+import { stripe } from "@/lib/utils";
 import { createEnrollment, getCourseById } from '@/sanity/lib/courses/queries';
 import { urlFor } from '@/sanity/lib/image';
 import { createUserIfNotExists } from '@/sanity/lib/student/queries';
